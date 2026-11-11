@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>זוהר – זהב ומואסניט</title>
+<meta name="description" content="תכשיטי זהב 14K אמיתי משובצים מואסניט. החזרה בלי שאלות תוך 30 יום, 12 תשלומים ומשלוח מבוטח חינם.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: dark velvet "showcase" hero where a moissanite throws rainbow fire, then a cool mineral-light shop below. Single theme by choice. */
+:root{
+  --velvet:#161a21;
+  --velvet-2:#202631;
+  --mineral:#eef1f3;
+  --paper:#ffffff;
+  --text:#1c222a;
+  --muted:#5b6571;
+  --line:#d8dde2;
+  --gold:#b0823a;
+  --gold-soft:#dcc08a;
+  --display:"Bellefair","Frank Ruhl Libre",Georgia,serif;
+  --body:"Assistant","Segoe UI",Arial,sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--mineral);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg,canvas{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.num{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+
+/* top strip */
+.strip{background:var(--velvet);color:var(--gold-soft);font-size:14px;letter-spacing:.02em}
+.strip .wrap{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;padding-block:8px}
+
+/* nav */
+header.nav{background:var(--velvet);color:#e9e4da;border-bottom:1px solid #2c3340}
+header.nav .wrap{display:flex;align-items:center;gap:32px;padding-block:18px}
+.logo{font-family:var(--display);font-size:30px;letter-spacing:.18em;color:#f3ead8;text-decoration:none;display:flex;align-items:baseline;gap:10px}
+.logo small{font-family:var(--body);font-size:12px;letter-spacing:.3em;color:var(--gold-soft)}
+header nav{display:flex;gap:24px;flex:1;flex-wrap:wrap}
+header nav a{text-decoration:none;font-size:16px;color:#cfd4dc}
+header nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:13px 26px;font-weight:600;font-size:16px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--body);transition:transform .2s, background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#9a7130}
+.btn-ghost{border-color:#4a5363;color:#e9e4da;background:transparent}
+.btn-ghost:hover{border-color:var(--gold-soft)}
+.btn-line{border-color:var(--text);color:var(--text);background:transparent}
+
+/* hero */
+.hero{background:radial-gradient(120% 90% at 20% 40%, var(--velvet-2), var(--velvet) 60%);color:#efe9dd;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:64px 56px}
+.eyebrow{font-size:14px;letter-spacing:.25em;color:var(--gold-soft);margin-bottom:18px}
+.hero h1{font-size:clamp(42px,6vw,76px);line-height:1.05;color:#f7f1e6}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#f3d9a2,#fff 45%,#bfe3ff 60%,#f3d9a2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:20px;color:#c9cfd8;max-width:30em;margin:22px 0 30px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.pay-note{font-size:15px;color:#aab2bd;margin-top:16px}
+.pay-note b{color:var(--gold-soft);font-weight:600}
+.gem-stage{position:relative;aspect-ratio:1/1;max-width:500px;justify-self:center;width:100%}
+.gem-stage canvas{width:100%;height:100%}
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2d3441;border:1px solid #2d3441;border-radius:14px;overflow:hidden;margin-top:40px}
+.specs div{background:var(--velvet);padding:16px 18px}
+.specs .v{font-family:var(--display);font-size:30px;color:#f6efe1;line-height:1}
+.specs .k{font-size:13.5px;color:#9aa3ae;margin-top:6px}
+
+/* trust */
+.trust{background:var(--paper);border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-block:30px}
+.trust .item{display:flex;gap:14px;align-items:flex-start}
+.trust svg{flex:none;width:34px;height:34px;color:var(--gold)}
+.trust b{display:block;font-size:16.5px}
+.trust span{font-size:14.5px;color:var(--muted)}
+
+/* sections */
+section.block{padding-block:72px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.sec-head h2{font-size:clamp(32px,4vw,46px);line-height:1.1}
+.sec-head p{color:var(--muted);margin:8px 0 0;max-width:34em}
+
+/* products */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s, box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(22,26,33,.45)}
+.card .pic{aspect-ratio:4/3.2;background:radial-gradient(80% 80% at 50% 45%,#ffffff,#e3e8ec);display:grid;place-items:center;position:relative}
+.card .pic svg{width:62%;height:auto}
+.tag{position:absolute;top:14px;right:14px;background:var(--velvet);color:var(--gold-soft);font-size:12.5px;padding:4px 11px;border-radius:999px}
+.card .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:24px}
+.card .meta{font-size:14px;color:var(--muted)}
+.card .price{display:flex;justify-content:space-between;align-items:baseline;margin-top:auto;padding-top:12px;border-top:1px solid var(--line)}
+.card .price b{font-size:21px}
+.card .price span{font-size:14px;color:var(--muted)}
+.note{font-size:13.5px;color:var(--muted);margin-top:18px}
+
+/* compare */
+.compare{background:var(--velvet);color:#e7e2d8}
+.compare .sec-head p{color:#a7afba}
+.cmp{width:100%;border-collapse:collapse;font-size:16.5px}
+.cmp-box{overflow-x:auto;border:1px solid #303846;border-radius:16px}
+.cmp th,.cmp td{padding:16px 20px;text-align:right;border-bottom:1px solid #2b323e}
+.cmp thead th{font-family:var(--display);font-weight:400;font-size:22px;color:#f4ecdc;background:#1c212a}
+.cmp thead th.us{color:var(--gold-soft)}
+.cmp tbody td:first-child{color:#9fa8b4}
+.cmp td.us{color:#fff;font-weight:600}
+.cmp tr:last-child td{border-bottom:none}
+
+/* founder */
+.founder .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.video{aspect-ratio:4/5;border-radius:20px;background:linear-gradient(160deg,#2a313d,#161a21);display:grid;place-items:center;color:#c8ced6;position:relative;overflow:hidden}
+.video .play{width:78px;height:78px;border-radius:50%;border:1px solid var(--gold-soft);display:grid;place-items:center}
+.video small{position:absolute;bottom:18px;inset-inline:0;text-align:center;font-size:13.5px;color:#8f99a5}
+.founder blockquote{font-family:var(--display);font-size:clamp(26px,3vw,36px);line-height:1.3;margin:0 0 22px}
+.founder p{color:var(--muted);max-width:34em}
+.promise{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
+.promise div{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:15.5px}
+.promise b{color:var(--gold)}
+
+/* reviews placeholder */
+.reviews{background:var(--paper);border-block:1px solid var(--line)}
+.rev-empty{border:1.5px dashed var(--line);border-radius:18px;padding:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev-empty div{background:var(--mineral);border-radius:12px;padding:20px;color:var(--muted);font-size:15px;min-height:120px}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--gold);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin:10px 0 0}
+
+/* footer */
+footer{background:var(--velvet);color:#aab2bd;font-size:15px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;padding-block:48px}
+footer h4{color:#efe7d6;font-weight:600;margin:0 0 10px;font-size:16px}
+footer a{display:block;text-decoration:none;padding:3px 0}
+footer a:hover{color:#fff}
+.legal{border-top:1px solid #2a313c;text-align:center;padding:16px;font-size:13px;color:#7d8793}
+
+/* whatsapp */
+.wa{position:fixed;bottom:20px;left:20px;z-index:10;display:flex;align-items:center;gap:10px;background:#1f8f55;color:#fff;text-decoration:none;border-radius:999px;padding:12px 18px;font-weight:600;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+.wa svg{width:22px;height:22px}
+
+@media (max-width:900px){
+  .hero .wrap,.founder .wrap,.faq .wrap{grid-template-columns:1fr}
+  .gem-stage{max-width:360px;order:-1}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .trust .wrap{grid-template-columns:repeat(2,1fr)}
+  .rev-empty{grid-template-columns:1fr}
+  footer .wrap{grid-template-columns:1fr}
+  header nav{display:none}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:1fr}
+  .trust .wrap{grid-template-columns:1fr}
+  .specs .v{font-size:24px}
+  .promise{grid-template-columns:1fr}
+  .wa span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<div class="strip"><div class="wrap">
+  <span>משלוח מבוטח חינם עד הבית</span>
+  <span>עד 12 תשלומים בלי ריבית</span>
+  <span>30 יום להחזרה, בלי שאלות</span>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top" id="top">ZOHAR <small>זוהר</small></a>
+  <nav aria-label="ראשי">
+    <a href="#shop">טבעות</a>
+    <a href="#shop">שרשראות</a>
+    <a href="#shop">עגילים</a>
+    <a href="#compare">מה זה מואסניט?</a>
+    <a href="#faq">שאלות</a>
+  </nav>
+  <a class="btn btn-ghost" href="https://wa.me/972500000000">ייעוץ בוואטסאפ</a>
+</div></header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">זהב 14K · מואסניט · עבודת יד</div>
+      <h1>נוצץ יותר מיהלום.<br><em>ובמחיר שאפשר להגיד עליו כן.</em></h1>
+      <p class="lead">זהב 14K אמיתי עם חותמת מכון התקנים, משובץ באבן מואסניט שזוהרת חזק יותר מיהלום. כל תכשיט מגיע עם תעודה, באריזת מתנה, ועם 30 יום לחשוב.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#shop">לקולקציה</a>
+        <a class="btn btn-ghost" href="#compare">מואסניט מול יהלום</a>
+      </div>
+      <div class="pay-note">טבעת הדגל: <b class="num">₪1,190</b> · או <b class="num">12 × ₪99</b> בחודש</div>
+      <div class="specs">
+        <div><div class="v num">2.65</div><div class="k">מקדם שבירה (ביהלום: 2.42). יותר ברק</div></div>
+        <div><div class="v num">9.25</div><div class="k">קשיות במוס. כמעט כמו יהלום</div></div>
+        <div><div class="v num">585</div><div class="k">זהב 14K, חתום במכון התקנים</div></div>
+      </div>
+    </div>
+    <div class="gem-stage" aria-hidden="true"><canvas id="gem" width="1000" height="1000"></canvas></div>
+  </div>
+</section>
+
+<div class="trust"><div class="wrap">
+  <div class="item">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 16a10 10 0 1 0 3-7"/><path d="M6 5v5h5"/></svg>
+    <div><b>30 יום להחזרה</b><span>לא אהבת? מחזירים את כל הכסף, בלי דמי ביטול</span></div>
+  </div>
+  <div class="item">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="4" width="20" height="24" rx="2"/><path d="M11 11h10M11 16h10M11 21h6"/></svg>
+    <div><b>תעודה לכל תכשיט</b><span>מפרט האבן, המתכת והמשקל</span></div>
+  </div>
+  <div class="item">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="16" cy="13" r="8"/><path d="M11 20l-2 8 7-3 7 3-2-8"/></svg>
+    <div><b>חותמת מכון התקנים</b><span>זהב אמיתי לפי ת"י 299</span></div>
+  </div>
+  <div class="item">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 4l10 4v7c0 7-4.5 11-10 13C10.5 26 6 22 6 15V8z"/><path d="M11.5 16l3 3 6-6"/></svg>
+    <div><b>אחריות לכל החיים</b><span>על האבן, וניקוי חינם בכל עת</span></div>
+  </div>
+</div></div>
+
+<section class="block" id="shop"><div class="wrap">
+  <div class="sec-head">
+    <div>
+      <h2>הקולקציה הראשונה</h2>
+      <p>שישה דגמים שנבחרו כמתנה שלא טועים בה. כל המחירים כוללים מע"מ, משלוח מבוטח ואריזת מתנה.</p>
+    </div>
+    <a class="btn btn-line" href="#shop">לכל התכשיטים</a>
+  </div>
+  <div class="grid" id="products"></div>
+  <p class="note">האיורים, המחירים והמידות הם להמחשה בלבד. נחליף אותם בצילומים ובנתונים מהסיטונאי.</p>
+</div></section>
+
+<section class="block compare" id="compare"><div class="wrap">
+  <div class="sec-head">
+    <div>
+      <h2>מואסניט, לא יהלום. ואנחנו אומרים את זה בגלוי.</h2>
+      <p>מואסניט היא אבן אחרת: היא זוהרת יותר, כמעט קשה כמו יהלום, ועולה רק חלק קטן מהמחיר שלו. כך היא מול יהלום בגודל קראט אחד:</p>
+    </div>
+  </div>
+  <div class="cmp-box">
+  <table class="cmp">
+    <thead><tr><th></th><th class="us">מואסניט</th><th>יהלום מעבדה</th><th>יהלום טבעי</th></tr></thead>
+    <tbody>
+      <tr><td>ברק (מקדם שבירה)</td><td class="us num">2.65</td><td class="num">2.42</td><td class="num">2.42</td></tr>
+      <tr><td>"אש" – הבזקי צבע</td><td class="us">חזקים, בצבעי קשת</td><td>מאוזנים, לבנים</td><td>מאוזנים, לבנים</td></tr>
+      <tr><td>קשיות (מוס)</td><td class="us num">9.25</td><td class="num">10</td><td class="num">10</td></tr>
+      <tr><td>תעודה</td><td class="us">GRA (מפרט אבן)</td><td>IGI / GIA</td><td>GIA</td></tr>
+      <tr><td>מחיר יחסי</td><td class="us">₪</td><td>₪₪₪</td><td>₪₪₪₪₪₪</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div></section>
+
+<section class="block founder"><div class="wrap">
+  <div class="video" role="img" aria-label="מקום לסרטון היכרות עם המייסד">
+    <div class="play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#dcc08a"><path d="M18 12L7 5v14z"/></svg></div>
+    <small>כאן ייכנס סרטון של 30 שניות שלך</small>
+  </div>
+  <div>
+    <blockquote>"רציתי שתוכלו לתת מתנה שנראית כמו מיליון, בלי לשלם על השם."</blockquote>
+    <p>אני מור, ואני עונה אישית לכל הודעה. כל תכשיט נבדק אצלי לפני שהוא נשלח, ומגיע אליכם מבוטח, עם חשבונית מפורטת ותעודה.</p>
+    <div class="promise">
+      <div><b>החלפת מידה</b> חינם, כולל משלוח</div>
+      <div><b>חריטה אישית</b> בתוך הטבעת</div>
+      <div><b>פתק בכתב יד</b> למי שמקבל את המתנה</div>
+      <div><b>תשובה בוואטסאפ</b> בתוך שעה, בשעות הפעילות</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="block reviews"><div class="wrap">
+  <div class="sec-head"><div><h2>מה הלקוחות מספרים</h2><p>הביקורות כאן יהיו רק של לקוחות אמיתיים, כולל תמונה של התכשיט עליהם.</p></div></div>
+  <div class="rev-empty">
+    <div>מקום לביקורת 1: תמונת לקוח, שם פרטי וציטוט</div>
+    <div>מקום לביקורת 2</div>
+    <div>מקום לביקורת 3</div>
+  </div>
+</div></section>
+
+<section class="block faq" id="faq"><div class="wrap">
+  <div class="sec-head" style="align-items:start"><div><h2>שאלות שכולם שואלים</h2><p>לא מצאתם תשובה? אפשר לכתוב לנו בוואטסאפ.</p></div></div>
+  <div>
+    <details open><summary>זה זהב אמיתי?</summary><p>כן. התכשיטים עשויים מזהב 14K (585) ונושאים את חותמת מכון התקנים. בחשבונית מופיעים סוג התכשיט, המשקל ודרגת הטוהר.</p></details>
+    <details><summary>אנשים יראו שזה לא יהלום?</summary><p>לעין רגילה קשה מאוד להבדיל. מואסניט אפילו נוצצת יותר, עם הבזקי צבע של קשת. מכשיר מעבדה מבחין ביניהם, ולכן אנחנו מציינים בגלוי שזו מואסניט.</p></details>
+    <details><summary>ומה אם המידה לא מתאימה?</summary><p>מחליפים את המידה בחינם, כולל משלוח. אם לא אהבתם בכלל, אפשר להחזיר תוך 30 יום ולקבל את כל הכסף.</p></details>
+    <details><summary>כמה זמן לוקח המשלוח?</summary><p>3–5 ימי עסקים, בשליח מבוטח עם חתימה. האריזה דיסקרטית ואין עליה מיתוג מבחוץ.</p></details>
+    <details><summary>אפשר לשלם בתשלומים?</summary><p>כן, עד 12 תשלומים בלי ריבית בכל כרטיסי האשראי.</p></details>
+  </div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="logo" style="margin-bottom:12px">ZOHAR <small>זוהר</small></div>
+      <p style="max-width:30em;margin:0">זהב 14K ומואסניט. משלוח עד הבית בכל הארץ.</p>
+      <p style="margin:12px 0 0">וואטסאפ: <span class="num">050-000-0000</span></p>
+    </div>
+    <div>
+      <h4>חנות</h4>
+      <a href="#shop">טבעות</a><a href="#shop">שרשראות</a><a href="#shop">עגילים</a><a href="#compare">מה זה מואסניט</a>
+    </div>
+    <div>
+      <h4>מידע</h4>
+      <a href="#faq">משלוחים והחזרות</a><a href="#faq">מדריך מידות</a><a href="#faq">תקנון ומדיניות ביטולים</a><a href="#faq">הצהרת נגישות</a>
+    </div>
+  </div>
+  <div class="legal">עוסק מורשה מס' [למלא] · כתובת העסק [למלא] · © 2026 זוהר</div>
+</footer>
+
+<a class="wa" href="https://wa.me/972500000000" aria-label="שליחת הודעה בוואטסאפ">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg>
+  <span>יש שאלה? כתבו לנו</span>
+</a>
+
+<script>
+/* ---------- products ---------- */
+const G = '#b0823a', S = '#9fb3c2';
+const gemDefs = `<defs><radialGradient id="gm" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#e4f1fb"/><stop offset="1" stop-color="#9fb8ca"/></radialGradient><linearGradient id="au" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9cc8e"/><stop offset=".5" stop-color="#b0823a"/><stop offset="1" stop-color="#d9b56f"/></linearGradient></defs>`;
+const stone = (x,y,r)=>`<g><polygon points="${[0,1,2,3,4,5,6,7].map(i=>{const a=Math.PI/8+i*Math.PI/4;return (x+r*Math.cos(a)).toFixed(1)+','+(y+r*Math.sin(a)).toFixed(1)}).join(' ')}" fill="url(#gm)" stroke="#7f98aa" stroke-width=".8"/><polygon points="${[0,1,2,3,4,5,6,7].map(i=>{const a=Math.PI/8+i*Math.PI/4;return (x+r*.55*Math.cos(a)).toFixed(1)+','+(y+r*.55*Math.sin(a)).toFixed(1)}).join(' ')}" fill="none" stroke="#b9cbd8" stroke-width=".7"/></g>`;
+const art = {
+  solitaire:`<svg viewBox="0 0 200 160">${gemDefs}<ellipse cx="100" cy="100" rx="58" ry="40" fill="none" stroke="url(#au)" stroke-width="9"/><path d="M84 66l6-14M116 66l-6-14" stroke="url(#au)" stroke-width="4"/>${stone(100,46,20)}</svg>`,
+  pendant:`<svg viewBox="0 0 200 160">${gemDefs}<path d="M30 10 Q100 120 170 10" fill="none" stroke="url(#au)" stroke-width="2.4" stroke-dasharray="3 2"/><circle cx="100" cy="72" r="5" fill="none" stroke="url(#au)" stroke-width="3"/>${stone(100,100,22)}</svg>`,
+  studs:`<svg viewBox="0 0 200 160">${gemDefs}${stone(68,80,26)}${stone(132,80,26)}<circle cx="68" cy="80" r="29" fill="none" stroke="url(#au)" stroke-width="3"/><circle cx="132" cy="80" r="29" fill="none" stroke="url(#au)" stroke-width="3"/></svg>`,
+  tennis:`<svg viewBox="0 0 200 160">${gemDefs}<path d="M20 60 Q100 150 180 60" fill="none" stroke="url(#au)" stroke-width="12" stroke-linecap="round"/>${Array.from({length:9},(_,i)=>{const t=(i+0.5)/9;const x=(1-t)*(1-t)*20+2*(1-t)*t*100+t*t*180;const y=(1-t)*(1-t)*60+2*(1-t)*t*150+t*t*60;return stone(x,y,7)}).join('')}</svg>`,
+  halo:`<svg viewBox="0 0 200 160">${gemDefs}<ellipse cx="100" cy="102" rx="56" ry="38" fill="none" stroke="url(#au)" stroke-width="8"/>${Array.from({length:12},(_,i)=>{const a=i*Math.PI/6;return stone(100+26*Math.cos(a),48+26*Math.sin(a),4.5)}).join('')}${stone(100,48,17)}</svg>`,
+  hoops:`<svg viewBox="0 0 200 160">${gemDefs}<circle cx="66" cy="84" r="36" fill="none" stroke="url(#au)" stroke-width="7"/><circle cx="134" cy="84" r="36" fill="none" stroke="url(#au)" stroke-width="7"/>${[0,1,2,3,4].map(i=>stone(66+36*Math.cos(Math.PI*(0.25+i*0.125)),84+36*Math.sin(Math.PI*(0.25+i*0.125)),4)).join('')}${[0,1,2,3,4].map(i=>stone(134+36*Math.cos(Math.PI*(0.25+i*0.125)),84+36*Math.sin(Math.PI*(0.25+i*0.125)),4)).join('')}</svg>`
+};
+const products = [
+  {k:'solitaire', name:'טבעת סוליטר "אור"', meta:'זהב 14K · מואסניט 1 קראט (6.5 מ"מ)', price:1190, tag:'הנמכר ביותר'},
+  {k:'pendant', name:'שרשרת "טיפה"', meta:'זהב 14K · מואסניט 0.5 קראט · 45 ס"מ', price:890},
+  {k:'studs', name:'עגילים צמודים "זוג"', meta:'זהב 14K · 2 × 0.5 קראט', price:990, tag:'מתנה מושלמת'},
+  {k:'tennis', name:'צמיד טניס "קו"', meta:'זהב 14K · 3 קראט בסך הכול · 17 ס"מ', price:2490},
+  {k:'halo', name:'טבעת הילה "כתר"', meta:'זהב 14K · מואסניט 1 קראט + הילה', price:1690},
+  {k:'hoops', name:'חישוקים "קשת"', meta:'זהב 14K · 10 אבני מואסניט', price:1290}
+];
+const fmt = n => '₪' + n.toLocaleString('en-US');
+document.getElementById('products').innerHTML = products.map(p=>`
+  <article class="card">
+    <div class="pic">${p.tag?`<span class="tag">${p.tag}</span>`:''}${art[p.k]}</div>
+    <div class="body">
+      <h3>${p.name}</h3>
+      <div class="meta">${p.meta}</div>
+      <div class="price"><b class="num">${fmt(p.price)}</b><span>או <span class="num">12 × ${fmt(Math.ceil(p.price/12))}</span></span></div>
+    </div>
+  </article>`).join('');
+
+/* ---------- hero gem: a brilliant cut throwing moissanite "fire" ---------- */
+(function(){
+  const c = document.getElementById('gem'); if(!c) return;
+  const ctx = c.getContext('2d');
+  const W = c.width, H = c.height, cx = W/2, cy = H/2, R = W*0.36;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const N = 16; // girdle points
+  const sparks = Array.from({length:14},()=>({a:Math.random()*Math.PI*2, d:Math.random()*R*0.95, p:Math.random()*Math.PI*2, s:0.6+Math.random()*0.8}));
+  function star(x,y,r,col,alpha){
+    ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=col;ctx.beginPath();
+    for(let i=0;i<8;i++){const rr=i%2?r*0.14:r;const a=i*Math.PI/4;ctx.lineTo(x+rr*Math.cos(a),y+rr*Math.sin(a));}
+    ctx.closePath();ctx.fill();ctx.restore();
+  }
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    // glow
+    const g = ctx.createRadialGradient(cx,cy,R*0.2,cx,cy,R*1.5);
+    g.addColorStop(0,'rgba(190,220,255,0.20)');g.addColorStop(1,'rgba(190,220,255,0)');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    const rot = t*0.00012;
+    const girdle=[], table=[], mid=[];
+    for(let i=0;i<N;i++){const a=rot+i*2*Math.PI/N;girdle.push([cx+R*Math.cos(a),cy+R*Math.sin(a),a]);}
+    for(let i=0;i<8;i++){const a=rot+Math.PI/8+i*Math.PI/4;table.push([cx+R*0.52*Math.cos(a),cy+R*0.52*Math.sin(a),a]);}
+    for(let i=0;i<8;i++){const a=rot+i*Math.PI/4;mid.push([cx+R*0.80*Math.cos(a),cy+R*0.80*Math.sin(a),a]);}
+    const facet=(pts,a,k)=>{
+      const light = 0.5+0.5*Math.sin(a*3 + t*0.0011 + k);
+      const fire = Math.pow(Math.max(0,Math.sin(a*5 - t*0.0009 + k*1.7)),8);
+      const hue = ((a*180/Math.PI)*2 + t*0.05)%360;
+      const l = 42 + light*50;
+      ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();
+      ctx.fillStyle = `hsl(${(205+(hue-205)*fire).toFixed(0)}, ${(14+fire*80).toFixed(0)}%, ${l.toFixed(0)}%)`;
+      ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,0.35)';ctx.lineWidth=1.4;ctx.stroke();
+    };
+    // outer facets: girdle pairs to mid points
+    for(let i=0;i<8;i++){
+      const m=mid[i], g1=girdle[(2*i+N-1)%N], g0=girdle[2*i], g2=girdle[(2*i+1)%N];
+      facet([m,g1,g0],m[2]-0.1,1); facet([m,g0,g2],m[2]+0.1,2);
+      const tA=table[(i+7)%8], tB=table[i];
+      facet([tA,m,g1],m[2]-0.3,3);
+      facet([tB,g2,m],m[2]+0.3,4);
+      facet([tA,tB,m],m[2],5);
+    }
+    // table
+    ctx.beginPath();table.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();
+    const tg=ctx.createLinearGradient(cx-R*0.5,cy-R*0.5,cx+R*0.5,cy+R*0.5);
+    tg.addColorStop(0,'rgba(255,255,255,0.95)');tg.addColorStop(0.5,'rgba(205,225,240,0.75)');tg.addColorStop(1,'rgba(255,255,255,0.9)');
+    ctx.fillStyle=tg;ctx.fill();ctx.strokeStyle='rgba(255,255,255,0.6)';ctx.stroke();
+    // gold prongs
+    for(let i=0;i<6;i++){const a=rot*0.5+i*Math.PI/3+Math.PI/6;const x=cx+R*1.02*Math.cos(a),y=cy+R*1.02*Math.sin(a);
+      const pg=ctx.createRadialGradient(x-6,y-6,2,x,y,22);pg.addColorStop(0,'#f6e2b0');pg.addColorStop(1,'#a87a32');
+      ctx.beginPath();ctx.arc(x,y,20,0,Math.PI*2);ctx.fillStyle=pg;ctx.fill();}
+    // spectral sparks
+    sparks.forEach((s,i)=>{const tw=Math.max(0,Math.sin(t*0.002*s.s+s.p));if(tw<0.2)return;
+      const x=cx+s.d*Math.cos(s.a+rot),y=cy+s.d*Math.sin(s.a+rot);
+      star(x,y,26*tw,`hsl(${(i*47+t*0.03)%360},90%,78%)`,tw*0.9); star(x,y,12*tw,'#fff',tw);});
+  }
+  if(reduce){draw(2000);return;}
+  let start=null;
+  const loop=ts=>{if(start===null)start=ts;draw(ts-start+2000);requestAnimationFrame(loop);};
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
